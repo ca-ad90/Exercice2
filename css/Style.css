@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+}
+
+#page-wrapper {
+
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(100px, 20%) auto auto auto;
+    grid-template-rows: 50px auto auto;
+
+}
+
+
+header {
+    grid-row: 1;
+    grid-column: span 4;
+    display: flex;
+    background-color: coral;
+}
+
+#nav-wrapper {
+    position: relative;
+    height: 25px;
+    align-self: end;
+    width: 100%;
+    display: flex;
+    background-color: darkorange;
+    justify-content: center;
+}
+#nav-sub {
+    position:absolute;
+    top:100%;
+    height: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    left:0px
+}
+.nav-dropdown:hover > #nav-sub {
+    height: 20px;
+    width: 100%;
+    left:0;
+
+}
+.item-3{display: none}
+.nav-droplist{
+    width: 100%;
+    background-color: darkgoldenrod;
+
+}
+.menu-item-3>#nav-sub > .item-3{
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-item{
+ display: block;
+ padding:1px;
+ margin-left: 10px;
+ color:black;
+ text-decoration: none;
+}
+.nav-item:hover{
+    background-color: darkgoldenrod;
+}
+.nav-item {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    color:black;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    margin-left: 20px;
+}
+
+.nav-droplist {
+    display: flex;
+    width: 100%;
+}
+
+
+
+footer {
+    grid-column: span 4;
+}
+
+main {
+    grid-row: span 2;
+    grid-column: span 3
+}
+
+aside {
+    grid-row: 2 / span 2;
+    grid-column: 1 /span 1;
+}
+
+#page-wrapper.showDebug>* {
+    border: 1px solid red;
+}
+
+@media only screen and (min-width:900px) {}
+
+
+
+#dbControl>.bar {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 15px;
+    background-color: rgb(144, 149, 196);
+}
+
+#dbControl {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 0px 0px 3px 2px rgb(0 0 0 / 40%);
+
+
+}
+
+#dbControl>.content {
+    overflow: hidden;
+    height: 150px;
+    width: 300px;
+    background-color: aliceblue;
+}
+
+#dbControl.closed {
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+#dbControl.closed>.bar {
+    border-radius: 5px;
+}
+
+#dbControl.closed>.content {
+    height: 0px;
+    width: 300px;
+    background-color: aliceblue;
+}
